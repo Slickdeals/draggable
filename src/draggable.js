@@ -315,7 +315,7 @@
 
       // set a high z-index, just in case
       me.dragEvent.oldZindex = element.style.zIndex;
-      element.style.zIndex = 10000;
+      element.style.zIndex = 2147483647;
 
       // set initial position
       me.setCursor(cursor);
