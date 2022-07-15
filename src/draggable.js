@@ -34,25 +34,6 @@
 
   };
 
-  var env = {
-
-    // CSS vendor-prefixed transform property
-    transform: (function(){
-
-      var prefixes = ' -o- -ms- -moz- -webkit-'.split(' ');
-      var style = document.body.style;
-
-      for (var n = prefixes.length; n--;) {
-        var property = prefixes[n] + 'transform';
-        if (property in style) {
-          return property;
-        }
-      }
-
-    })()
-
-  };
-
   var util = {
 
     assign: function () {
@@ -230,6 +211,23 @@
     },
 
     initialize: function() {
+      var env = {
+
+        // CSS vendor-prefixed transform property
+        transform: (function(){
+    
+          var prefixes = ' -o- -ms- -moz- -webkit-'.split(' ');
+          var style = document.body.style;
+    
+          for (var n = prefixes.length; n--;) {
+            var property = prefixes[n] + 'transform';
+            if (property in style) {
+              return property;
+            }
+          }
+    
+        })()
+      };
 
       var me = this,
         element = me.element,
